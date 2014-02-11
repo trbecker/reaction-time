@@ -4,11 +4,10 @@
 
 #include <sys/stat.h>
 
-#include <sqlite3.h>
-
 #include <curses.h>
 
 #include "reaction_time.h"
+#include "sqlite3.h"
 
 #define DOT_LOCAL ".local"
 #define DB_PATH DOT_LOCAL "/reaction_time/"
