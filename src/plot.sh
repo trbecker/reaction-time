@@ -10,8 +10,13 @@ set output "plot-$(date +%Y-%m-%d).png"
 set datafile separator "|"
 
 set xlabel "Sample"
+set xdata time
+set timefmt "%s"
+set format x "%F %H:%m"
+set xtics rotate
+
 set ylabel "Reaction time (ms)"
-plot "data.dat" pt 7 ps .5  lc 3 t "Raw", "avg.dat" w lines ls 10 lc 1 t "Average"
+plot "data.dat" u 1:2 pt 7 ps .5  lc 3 t "Raw", "avg.dat" u 1:2 w lines ls 10 lc 1 t "Average"
 EOF
 
 rm data.dat
